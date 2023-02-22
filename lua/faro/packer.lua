@@ -8,6 +8,11 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
+    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -18,21 +23,21 @@ return require('packer').startup(function(use)
         run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
     }
 
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-    })
+   -- use({
+   --     'rose-pine/neovim',
+   --     as = 'rose-pine',
+   -- })
 
-    use ({ "catppuccin/nvim", as = "catppuccin" })
+   -- use ({ "catppuccin/nvim", as = "catppuccin" })
 
-    use ({
-        "ellisonleao/gruvbox.nvim",
-        as = 'gruvbox',
-    })
+   -- use ({
+   --     "ellisonleao/gruvbox.nvim",
+   --     as = 'gruvbox',
+   -- })
 
-    use {
-        'luisiacc/gruvbox-baby', branch = 'main'
-    }
+   -- use {
+   --     'luisiacc/gruvbox-baby', branch = 'main'
+   -- }
 
     use "rebelot/kanagawa.nvim"
 
